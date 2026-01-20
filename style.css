@@ -1,0 +1,286 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  height: 70px;
+}
+
+body {
+  padding: 16px;
+  font-family: "Inter", sans-serif;
+  background-color: #f4f6fb;
+}
+
+h1 {
+	font-size: 20px;
+	color: white;
+  text-transform: uppercase;
+}
+
+p.subtitle {
+  position: absolute;
+  top: 5rem;
+  color: white;
+  font-family: cursive;
+}
+
+textarea {
+  min-height: 6em;
+}
+
+.text-input {
+  padding: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  display: block;
+  resize: vertical;
+  outline: 0px;
+}
+
+.favorites {
+  position: absolute;
+  background-color: unset;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  top: 8px;
+  right: 8px;
+  transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease;
+  color: #ffd700;
+}
+
+.favorites:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.8));
+}
+
+@media (max-width: 600px) {
+  .translation-box {
+    width: 100%;
+  }
+  
+  .controls {
+    width: 100%;
+  }
+
+  .text-input {
+    width: 100%;
+  }
+}
+
+
+select#language-select {
+  height: 50px;
+  border-radius: 1rem;
+  width: calc(100% / 2 - 30px);
+}
+
+i.fa-solid.fa-arrow-right-arrow-left {
+  position: relative;
+  align-content: center;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.lang-button {
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-family: math;
+}
+
+#language-select option:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
+#language-select option:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Larghezza della scrollbar */
+#language-select::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Colore dello sfondo della scrollbar */
+#language-select::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Colore del cursore (pollice) */
+#language-select::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px; /* Per angoli arrotondati */
+}
+
+/* Colore del cursore al passaggio del mouse */
+#language-select::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.reset-button, .random-button {
+  padding: 8px 16px;
+  background-color: rgb(128 176 255);
+  font-size: 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+button.reset-button:hover, button.random-button:hover {
+  transform: scale(1.1);
+}
+
+i.fa-solid.fa-dice {
+  color: white;
+  position: relative;
+  font-size: 1.5rem;
+  transition: color ease 0.2s;
+}
+
+i.fa-solid.fa-dice:hover {
+  color: #ffd700;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.panel {
+  background-color: rgb(76 100 242);
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.translation {  
+  margin-bottom: 16px;
+  height: 210px;
+  display: flex;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.translation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.7);
+}
+
+.translation-box {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.translate {
+  position: relative;
+  top: 1.2rem;
+}
+
+.translation-text,
+.translations-text {
+  font-size: 32px;
+  margin-bottom: 8px;
+  font-family: emoji;
+  min-height: 40px;
+}
+
+.translation-flag {
+  background-size: cover;
+  opacity: 0.15;
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  opacity: 0.8;
+}
+
+.textIn {
+  width: 50%;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+.translate-favorites {
+  position: relative;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.remove-translate {
+  padding-top: inherit;
+  margin-top: 1rem;
+  display: block;
+  position: relative;
+}
+
+p.text {
+  color: white;
+  font-family: serif;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+button#remove-selected-button {
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 2px solid #f74c4c;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+button#remove-selected-button:hover {
+  filter: drop-shadow(2px 2px 20px rgb(226 182 140));
+}
+
+.selected {
+  background-color: #f7d7d7;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  position: relative;
+  top: 1.5rem;
+}
+
+p.footer-text {
+  font-size: 1.1rem;
+  font-family: cursive;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
