@@ -68,10 +68,14 @@ textarea {
   .controls {
     width: 100%;
   }
+}
 
-  .text-input {
-    width: 100%;
-  }
+.error {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+  width: 100%;
 }
 
 

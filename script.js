@@ -8,6 +8,7 @@ const translateFlagFrom = document.querySelector('.flag-from');
 const translateFlagTo = document.querySelector('.flag-to');
 const translationTextFrom = document.querySelector('.text-from');
 const translationsTextTo = document.querySelector('.text-to');
+const errorMessage = document.getElementById('error-message');
 const resetButton = document.querySelector('.reset-button');
 const favoriteButtonFrom = document.querySelector('.favorites-from');
 const favoriteButtonTo = document.querySelector('.favorites-to');
@@ -122,16 +123,23 @@ function changeBackground() {
   }
 }
 
-languageSelectFrom.addEventListener('change', changeBackground);
-languageSelectTo.addEventListener('change', changeBackground);
+languageSelectFrom.addEventListener('change', () => {
+  validate();
+  changeBackground();
+});
+
+languageSelectTo.addEventListener('change', () => {
+  validate();
+  changeBackground();
+});
 
 
 //Funzione per resettare i campi
 function reset() {
   fromText.value = '';
   toText.value = '';
-  languageSelectFrom.value = '';
-  languageSelectTo.value = '';
+  languageSelectFrom.value = 'change-lang';
+  languageSelectTo.value = 'change-lang';
   // Rimuovo lo sfondo
   translateFlagFrom.style.backgroundImage = "none";
   translateFlagTo.style.backgroundImage = "none";
@@ -218,7 +226,30 @@ async function translate() {
   changeBackground();
 }
 
-fromText.addEventListener('keyup', translate);
+function validate() {
+  if (languageSelectFrom.value === "change-lang") {
+    errorMessage.innerText = "❗ Seleziona la lingua di partenza.";
+    return false;
+  }
+
+  if (languageSelectTo.value === "change-lang") {
+    errorMessage.innerText = "❗ Seleziona la lingua di arrivo.";
+    return false;
+  }
+
+  if (fromText.value.trim() === "") {
+    errorMessage.innerText = "❗ Inserisci un testo da tradurre.";
+    return false;
+  }
+
+  errorMessage.innerText = "";
+  return true;
+}
+
+fromText.addEventListener('keyup', () => {
+  if(!validate()) return;
+  translate();
+});
 
 languageSelectFrom.addEventListener('change', translate);
 languageSelectTo.addEventListener('change', translate);

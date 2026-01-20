@@ -40,7 +40,9 @@
       <section class="panel controls">
         <textarea class="text-input from-text" placeholder="Inserisci il testo da tradurre" aria-label="Testo di partenza" style="height: 60px;"></textarea>
         <textarea class="text-input to-text" placeholder="Traduzione" aria-label="Testo di arrivo" style="height: 60px;" readonly></textarea>
-        
+
+        <p id="error-message" class="error"></p>
+
         <!-- Select per la scelta della lingua -->
         <select name="lang" id="languageFrom" class="selectedFrom">
           <option value="change-lang" class="lang-button" selected disabled>Seleziona lingua</option>
